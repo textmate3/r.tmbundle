@@ -21,7 +21,7 @@ else
 	fi
 fi
 
-ruby18 Rhelperbuilder.rb &> /dev/null &
+ruby Rhelperbuilder.rb &> /dev/null &
 
 ### wait for Rhelper
 #safety counter
