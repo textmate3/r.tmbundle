@@ -35,7 +35,7 @@ FileUtils.rm_f($pipe_console)
 
 PTY.spawn(cmd) { |r,w,pid|
 
-	r.sync = FALSE
+	r.sync = false
 
 	# write r to the nirvana
 	Thread.new {
@@ -45,7 +45,7 @@ PTY.spawn(cmd) { |r,w,pid|
 	# Thread to destroy daemon after quitting TextMate
 	Thread.new do
 		# Check if TextMate is still running; if not terminate Help Daemon
-		while TRUE
+		while true
 			sleep 10
 			break if %x{ps -ax | grep "[0-9] /.*app.*/TextMate" | cut -d ' ' -f2}.empty?
 		end
@@ -65,7 +65,7 @@ PTY.spawn(cmd) { |r,w,pid|
 
 	%x{echo -en "STARTED" > '#{$pipe_status}'}
 
-	while TRUE
+	while true
 		task = $fin.gets.chomp
 		%x{echo -en "BUSY" > '#{$pipe_status}'}
 		if task[0,1] == "@"
