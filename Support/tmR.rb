@@ -49,7 +49,7 @@ def my_popen3(*cmd) # returns [stdin, stdout, strerr, pid]
 
     # maybe there is a way to support this in future ;)
     # tm_interactive_input = SUPPORT_LIB + '/tm_interactive_input.dylib'
-    # if (File.exists? tm_interactive_input) 
+    # if (File.exist? tm_interactive_input) 
     #   dil = ENV['DYLD_INSERT_LIBRARIES']
     #   ENV['DYLD_INSERT_LIBRARIES'] = (dil) ? "#{tm_interactive_input}:#{dil}" : tm_interactive_input unless (dil =~ /#{tm_interactive_input}/)
     #   ENV['DYLD_FORCE_FLAT_NAMESPACE'] = "1"
@@ -110,7 +110,7 @@ document.onkeyup = function keyPress(event) {
 HTML
 
 tmpDir = File.join(ENV['TMP'] || "/tmp", "TM_R")
-recursive_delete(tmpDir) if File.exists?(tmpDir) # remove the temp dir if it's already there
+recursive_delete(tmpDir) if File.exist?(tmpDir) # remove the temp dir if it's already there
 Dir::mkdir(tmpDir)
 
 if(%x{which #{(ENV['TM_REXEC']==nil) ? 'R' : ENV['TM_REXEC']}}.empty?)
