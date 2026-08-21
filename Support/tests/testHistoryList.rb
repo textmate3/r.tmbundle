@@ -1,8 +1,8 @@
 require 'test/unit'
-require '../lib/historyList.rb'
+require_relative '../lib/historyList'
 class TestHistoryList < Test::Unit::TestCase
   def setup
-    @sample = File.read("historyTestFile.Rconsole")
+    @sample = File.read("#{__dir__}/historytestFile.Rconsole")
     test_init
   end
   def test_init
