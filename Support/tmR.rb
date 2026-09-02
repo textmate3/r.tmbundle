@@ -203,7 +203,7 @@ if !Dir::glob("#{tmpDir}/*.pdf").empty?
     counter +=  1
     rndn = Time.now.to_i # random number needed to enforce reloading of cached images
     print "<div class='img'>"
-    print "<img width=#{width} onclick=\"TextMate.system(\'open \\'#{f}\\'\',null);\" src='file://#{f}?#{rndn}' />"
+    print "<img width=#{width} onclick=\"TextMate.system(\'open \\'#{f}\\'\',null);\" src='x-txmt-filehandle://#{f}?#{rndn}' />"
     print "</div>"
     print "<br>" if (counter % 2 == 0)
   }
